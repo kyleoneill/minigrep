@@ -54,6 +54,7 @@ pub fn search_directory(dir: &Path, config: &Config) -> Result<(), Box<dyn Error
             }
             else {
                 search_single_file(&path, &config)?;
+                println!("");
             }
         }
     }
@@ -70,7 +71,8 @@ pub fn search_single_file(path: &Path, config: &Config) -> Result<(), Box<dyn Er
     if matched_lines.len() > 0 {
         println!("File: {}", path.to_str().unwrap());
         for line in matched_lines {
-            println!("{}\n", line);
+            let index = &file_contents.lines().position(|r| r == line.to_string()).unwrap();
+            println!("{0}: {1}", index, line);
         }
     }
     Ok(())
