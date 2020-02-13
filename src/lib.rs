@@ -71,6 +71,7 @@ pub fn search_single_file(path: &Path, config: &Config) -> Result<(), Box<dyn Er
         println!("File: {}", path.to_str().unwrap());
         for line in matched_lines {
             let index = &file_contents.lines().position(|r| r == line.to_string()).unwrap();
+            let index = (*index as i32) + 1;
             println!("{0}: {1}", index, line);
         }
         println!("");
