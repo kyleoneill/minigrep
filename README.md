@@ -1,0 +1,2 @@
+# Minigrep
+My implementation of the minigrep exercise from the [Rust Programming Language](https://doc.rust-lang.org/book/ch12-00-an-io-project.html) book. My implementation adds the ability to search for a phrase instead of a single word and adds the ability to search a directory tree.
